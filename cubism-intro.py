@@ -1,12 +1,12 @@
 #!/usr/bin/env python
-from flask import Flask
+from flask import Flask, render_template
 
 
-app = Flask(__name__, static_url_path='')
+app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return app.send_static_file("03.html")
+    return render_template('03.html')
 
 if __name__ == '__main__':
     app.debug = True
